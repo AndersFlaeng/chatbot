@@ -1,0 +1,198 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fffcf0; /* baggrund */
+  color: #181501; /* tekst */
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; /* <-- Tilføj denne linje for at centrere */
+  background: white;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.chat-messages {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #000000; /* primær */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.chat-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  outline: none;
+  background-color: #fff;
+  color: #181501;
+}
+
+.chat-input:focus {
+  border-color: #f9cb15; /* primær */
+  box-shadow: 0 0 3px rgba(249, 203, 21, 0.5);
+}
+
+.chat-form .btn-primary {
+  padding: 10px 20px;
+  background: #f9cb15; /* primær */
+  color: #181501; /* tekst */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.chat-form .btn-primary:hover {
+  background: #d1a80f; /* lidt mørkere primær til hover */
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 3px solid #ddd;
+}
+
+.message.bruger {
+  background: #cdfb6a; /* sekundær */
+  border-left-color: #98fa52; /* accent */
+  margin-left: 20px;
+  color: #181501;
+}
+
+.message.bot {
+  background: #f9cb15; /* primær */
+  border-left-color: #e7b904; /* accent */
+  margin-right: 20px;
+  color: #181501;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.sender {
+  color: #181501;
+  font-size: 14px;
+}
+
+.timestamp {
+  color: #181501;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.message-text {
+  color: #181501;
+  line-height: 1.4;
+}
+
+.teach-section {
+  background: #fffcf0; /* baggrund */
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border-left: 4px solid #f9cb15; /* primær */
+}
+
+.teach-form .form-group {
+  margin-bottom: 15px;
+}
+
+.teach-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #181501;
+}
+
+.teach-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #98fa52; /* accent */
+  border-radius: 4px;
+  font-size: 14px;
+  color: #181501;
+}
+
+.teach-form input[type="text"]:focus {
+  border-color: #f9cb15; /* primær */
+  box-shadow: 0 0 3px rgba(249, 203, 21, 0.5);
+}
+
+.teach-form small {
+  display: block;
+  color: #181501;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.btn-primary {
+  background: #f9cb15; /* primær */
+  color: #181501; /* tekst */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #d1a80f; /* mørkere primær til hover */
+}
+
+/* Stil summary som en knap */
+.teach-section summary {
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f9cb15; /* primær farve */
+  border-radius: 8px;
+  color: #181501;
+  user-select: none;
+  list-style: none; /* Fjern trekant i Firefox */
+  outline: none;
+  margin-bottom: 10px;
+}
+
+/* Fjern standard trekant i Chrome/Safari */
+.teach-section summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Tilføj custom ikon ved siden af summary */
+.teach-section[open] summary::before {
+  content: "▼ "; /* pil ned når åben */
+}
+
+.teach-section summary::before {
+  content: "▶ "; /* pil til højre når lukket */
+  color: #181501;
+}
+
+/* Sørg for at formen ser pæn ud */
+.teach-section form {
+  padding: 10px 0 0 10px;
+}

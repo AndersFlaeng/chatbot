@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ChatBot med Anders Flæng</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Montserrat font via Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+    <form method="POST" action="/chat" class="chat-form">
+      <input
+        type="text"
+        name="message"
+        placeholder="Skriv din besked her..."
+        class="chat-input"
+        required
+      />
+      <button type="submit" class="btn-primary">Send</button>
+    </form>
+
+    <% if (typeof error !== 'undefined' && error) { %>
+    <div
+      class="error-message"
+      style="color: red; background: #ffe6e6; padding: 10px; margin: 10px 0; border-radius: 5px;"
+    >
+      <strong>Fejl:</strong> <%= error %>
+    </div>
+    <% } %>
+
+    <div class="chat-messages">
+      <% messages.forEach(function(msg) { %>
+      <div class="message <%= msg.sender.toLowerCase() %>">
+        <div class="message-header">
+          <strong class="sender"><%= msg.sender %>:</strong>
+          <span class="timestamp"><%= msg.time %></span>
+        </div>
+        <div class="message-text"><%= msg.text %></div>
+      </div>
+      <% }); %>
+    </div>
+
+    <details class="teach-section">
+      <summary>🎓 Lær botten noget nyt</summary>
+      <p>Hjælp botten med at lære nye ord og svar!</p>
+
+      <form method="POST" action="/add-response" class="teach-form">
+        <div class="form-group">
+          <label for="keyword">Nøgleord:</label>
+          <input
+            type="text"
+            id="keyword"
+            name="keyword"
+            placeholder="fx 'kage' eller 'computere'"
+            required
+            maxlength="50"
+          />
+          <small>Ordet som skal trigger svaret</small>
+        </div>
+
+        <div class="form-group">
+          <label for="answer">Svar:</label>
+          <input
+            type="text"
+            id="answer"
+            name="answer"
+            placeholder="fx 'Jeg elsker chokoladekage!' eller 'Computere er fascinerende!'"
+            required
+            maxlength="200"
+          />
+          <small>Hvad botten skal svare når ordet bruges</small>
+        </div>
+
+        <button type="submit" class="btn-primary">➕ Tilføj nyt svar</button>
+      </form>
+    </details>
+    </div>
+  </body>
+</html>

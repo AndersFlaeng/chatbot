@@ -1,0 +1,18 @@
+{
+  "name": "chatbot-andersflaeng",
+  "version": "1.0.0",
+  "description": "A simple Node.js Express server with EJS templating",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["node", "express", "ejs", "server"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.9"
+  }
+}
